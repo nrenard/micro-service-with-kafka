@@ -11,7 +11,7 @@ app.use(express.json());
 
 const kafka = new Kafka({
   clientId: "api",
-  brokers: ['localhost:9092'],
+  brokers: ['kafka:9092'],
   retry: {
     initialRetryTime: 300,
     retries: 10,

@@ -2,7 +2,11 @@ import { Kafka, logLevel } from 'kafkajs';
 
 const kafka = new Kafka({
   clientId: "certificate",
-  brokers: ['localhost:9092'],
+  brokers: ['kafka:9092'],
+  retry: {
+    initialRetryTime: 300,
+    retries: 10,
+  },
   logLevel: logLevel.NOTHING
 });
 
@@ -31,6 +35,9 @@ async function run() {
       }, 3000);
       console.log(`value: ${message.value}`);
     }
-  })
+  });
+
+  console.log('Running certification.');
 };
+
 run().catch(console.error);
