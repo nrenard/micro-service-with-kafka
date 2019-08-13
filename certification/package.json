@@ -5,5 +5,12 @@
   "license": "MIT",
   "dependencies": {
     "kafkajs": "^1.10.0"
+  },
+  "devDependencies": {
+    "nodemon": "^1.19.1",
+    "sucrase": "^3.10.1"
+  },
+  "scripts": {
+    "dev": "nodemon src/index.js"
   }
 }
